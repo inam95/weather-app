@@ -21,7 +21,7 @@ function forecast(lng, lat, callback) {
           wind_degree
         } = body.current;
 
-        const detailedForecast = `${weather_descriptions[0]}. It's currently ${temperature} degree out. It feels like ${feelslike} degree out. wind speed of ${wind_speed} with ${wind_degree} wind degree`;
+        const detailedForecast = `${weather_descriptions[0]}. It's currently ${temperature} degree out. It feels like ${feelslike} degree out. Wind speed of ${wind_speed} with ${wind_degree} wind degree`;
 
         callback(undefined, detailedForecast);
       }
