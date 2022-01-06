@@ -13,9 +13,15 @@ function forecast(lng, lat, callback) {
       if (body.error) {
         callback('Unable to find location', undefined);
       } else {
-        const { temperature, feelslike, weather_descriptions } = body.current;
+        const {
+          temperature,
+          feelslike,
+          weather_descriptions,
+          wind_speed,
+          wind_degree
+        } = body.current;
 
-        const detailedForecast = `${weather_descriptions[0]}. It's currently ${temperature} degree out. It feels like ${feelslike} degree out.`;
+        const detailedForecast = `${weather_descriptions[0]}. It's currently ${temperature} degree out. It feels like ${feelslike} degree out. wind speed of ${wind_speed} with ${wind_degree} wind degree`;
 
         callback(undefined, detailedForecast);
       }
